@@ -1,0 +1,17 @@
+*.tmp
+*.log
+*.bak
+*.old
+*.orig
+Thumbs.db
+Desktop.ini
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+artifacts/
+outputs/
+benchmarks/runs/
+.aider*

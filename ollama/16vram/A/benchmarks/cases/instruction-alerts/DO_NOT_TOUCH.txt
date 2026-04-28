@@ -1,0 +1,1 @@
+This sentinel file exists to catch sloppy edits.
