@@ -42,6 +42,11 @@
       "state": "PASSED",
       "attempts": 1,
       "checkpoint": "2585019 + github 6808680"
+    },
+    "T-201..T-205": {
+      "state": "PASSED",
+      "attempts": 3,
+      "checkpoint": "72cf939 + github 2d3d143"
     }
   },
   "history": [
@@ -59,6 +64,8 @@
     "ANTI-STUCK + REAL-TIME round: fixed the user's live-session failures - search_files dual-mode (20x 'query required' loop), fetch_url nav-strip+truncation honesty+refetch guard, 3s Heartbeat (immediate beat, covers queue+prefill+streaming+tools; max observed gap 3.0s), stuck-guard (2=hint,4=force-different), malformed tool-call 6 retries w/ corrective note, double task_done verification round (inspect-only), run tools cwd param, max_iters 120, checker assert-family+BOM fixes, M07/M14 mission clarifications. Certification: definitive-3 sweep 12/12 PASS; M14 repro PASS max-gap 3.0s; fast-launch 449-454ms; pushed to GitHub 8e919ff",
     "MISSION PERFECTED & COMPLETE",
     "WEB CAPABILITIES round: web_research (multi-engine search + parallel headless source digests), web_search multi-engine failover (ddgs/DuckDuckGo/Bing/Mojeek, dedup), fetch_url page-chrome strip + tables-to-markdown + exact totals + start_char chunking + PDF detection, open_in_browser demoted to visual last resort, prompt rule 11. Verified: offline parser tests, live web_search/web_research/start_char tests (65k-char page chunked), battery 12/12 sweep, fast-launch 465-478ms, pushed to GitHub 6808680",
+    "MISSION PERFECTED & COMPLETE",
+    "UX HARDENING round (user live-session demands): scroll-force fixed (rich Live removed - content-driven output, silence beats 5s/15s terminal, 3s piped logs); msvcrt Up/Down history across ALL sessions + full slash battery (/help /new /sessions /history /stats /research /compact /model /tools /save /reset /cwd /exit); auto context compaction via real prompt_eval_count + atomic boundaries = unlimited sessions; ULTIMATEAI_HW ground truth injected (never misreport VRAM); never-argue + beautiful-answer contract; parallel scout findings applied (keep_alive 1h, thinking round-trip, gemma4/qwen3.6 catalog, recount rule); M03 checker + concurrency incident resolved; certification 12/12 (M01-M04,M05,M06,M08-M12 sweep + M07,M11 clean reruns); fast launch 449-509ms; pushed 72cf939 -> github 2d3d143, outer repo main -> 72cf939",
     "MISSION PERFECTED & COMPLETE"
   ]
 }
