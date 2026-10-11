@@ -1,0 +1,10 @@
+{
+  "mission_id": "form-20261011-1834",
+  "objective": "Prove Ultimate-AI.cmd stack: drive the interactive harness through 12 complex missions end-to-end with zero help, timestamped real-time human-readable progress throughout, iterating until 12/12 verified.",
+  "tasks": [
+    { "task_id": "T-101", "title": "harness real-time UX + --mission mode", "target_files": ["ultimate-llm/harness/harness.py"], "dependencies": [], "interface_spec": "contracts-battery.md T-101 items 1-8", "acceptance_tests": ["python -m py_compile harness/harness.py", "python harness/harness.py --self-test"], "priority": 1 },
+    { "task_id": "T-102", "title": "12-mission battery + verify.py", "target_files": ["ultimate-llm/missions/"], "dependencies": [], "interface_spec": "contracts-battery.md T-102", "acceptance_tests": ["python missions/verify.py --list"], "priority": 1 },
+    { "task_id": "T-103", "title": "execute battery 12/12 zero-help", "target_files": ["ultimate-llm/missions/logs/"], "dependencies": ["T-101", "T-102"], "interface_spec": "contracts-battery.md T-103", "acceptance_tests": ["python missions/verify.py ALL"], "priority": 3 },
+    { "task_id": "T-104", "title": "Ultimate-AI.cmd end-to-end + docs", "target_files": ["ultimate-llm/README.md"], "dependencies": ["T-103"], "interface_spec": "contracts-battery.md T-104", "acceptance_tests": ["manual evidence in ledger"], "priority": 4 }
+  ]
+}

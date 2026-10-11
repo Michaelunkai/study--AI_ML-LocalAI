@@ -1,0 +1,64 @@
+{
+  "mission_id": "form-20261011-1834",
+  "updated_at": "2026-10-11T19:40:00+03:00",
+  "mode": "OFF-PEAK",
+  "tasks": {
+    "T-101": {
+      "state": "PASSED",
+      "attempts": 0,
+      "checkpoint": "314c0ce"
+    },
+    "T-102": {
+      "state": "PASSED",
+      "attempts": 0,
+      "checkpoint": "314c0ce"
+    },
+    "T-103": {
+      "state": "PASSED",
+      "attempts": 7,
+      "checkpoint": "313c8a4"
+    },
+    "T-104": {
+      "state": "PASSED",
+      "attempts": 2,
+      "checkpoint": "f6b48c4"
+    },
+    "T-105": {
+      "state": "PASSED",
+      "attempts": 1,
+      "checkpoint": "397136f"
+    },
+    "T-106": {
+      "state": "PASSED",
+      "attempts": 1,
+      "checkpoint": "github: 5b3566f (export main)"
+    },
+    "F-101..F-105": {
+      "state": "PASSED",
+      "attempts": 5,
+      "checkpoint": "dbd6443 + github 8e919ff"
+    },
+    "W-1": {
+      "state": "PASSED",
+      "attempts": 1,
+      "checkpoint": "2585019 + github 6808680"
+    }
+  },
+  "history": [
+    "T-103 iteration rounds: r1 4/12 -> r2 7/12 -> r3 9/12 -> r5 10/12 -> r6 11/12 -> r7 12/12 individual",
+    "INCIDENT: M04 agent ran git workflow in OUTER repo (commits on form branch, switched HEAD to main). Recovered: form branch reset to 2d781f9, main restored to 42cf996, feature branch deleted, tree intact. Added scope-isolation rule 9 + runner repo-state guard (snapshot/restore branch+SHA per mission)",
+    "checker fixes found by battery: M02 missing COMPLETE marker, M05 int/str TypeError + RAM-label regex, M10 example.com new boilerplate wording, M11 UTF-8 BOM tolerance",
+    "harness fixes found by battery: empty-response nudge+mission restart, ChatError retries 4x backoff, ConnectionError 8x backoff, task_done rejects empty summary, cwd echo in shell tool results, CRITICAL RULES 1-9 in system prompt",
+    "DEFINITIVE single sweep under final harness: 12/12 PASSED (19:20-19:27), logs missions/logs/battery-definitive.txt + M01..M12-def.log",
+    "T-104: Ultimate-AI.cmd end-to-end via stdin REPL: prereqs->discovery(gpt-oss:20b)->venv->launch->MISSION 13 completed 24s, stats independently recomputed and matched (75/68/'and'); ollama auto-updated 0.35.0->0.40.3 mid-proving without breaking the stack",
+    "MISSION PERFECTED & COMPLETE",
+    "T-105 sub-second goal: baseline 9.8-10.8s warm launch -> lazy harness imports (211ms) + cached bootstrap fast path + detached 60-min model warm-up + -Full flag; 10/10 launches <1s (max 558ms); M13 mission via fast-path REPL completed and verified (tool output == stats.txt); ollama ps confirms 100% GPU 32K ctx residency",
+    "MISSION PERFECTED & COMPLETE",
+    "T-106 GitHub publish: fixed polluted git identity (Ultimate Agent -> Michaelunkai via rebase reset-author), removed agent junk (data/, report.md, backup_log.txt), added LICENSE + deliverable .gitignore, rewrote beautiful README (badges/mermaid/tables), subtree-split ultimate-llm -> 14-commit clean history, pushed public https://github.com/Michaelunkai/ultimate-llm (main, 30 files, zero venv/pycache/log junk, verified via API)",
+    "MISSION PERFECTED & COMPLETE",
+    "ANTI-STUCK + REAL-TIME round: fixed the user's live-session failures - search_files dual-mode (20x 'query required' loop), fetch_url nav-strip+truncation honesty+refetch guard, 3s Heartbeat (immediate beat, covers queue+prefill+streaming+tools; max observed gap 3.0s), stuck-guard (2=hint,4=force-different), malformed tool-call 6 retries w/ corrective note, double task_done verification round (inspect-only), run tools cwd param, max_iters 120, checker assert-family+BOM fixes, M07/M14 mission clarifications. Certification: definitive-3 sweep 12/12 PASS; M14 repro PASS max-gap 3.0s; fast-launch 449-454ms; pushed to GitHub 8e919ff",
+    "MISSION PERFECTED & COMPLETE",
+    "WEB CAPABILITIES round: web_research (multi-engine search + parallel headless source digests), web_search multi-engine failover (ddgs/DuckDuckGo/Bing/Mojeek, dedup), fetch_url page-chrome strip + tables-to-markdown + exact totals + start_char chunking + PDF detection, open_in_browser demoted to visual last resort, prompt rule 11. Verified: offline parser tests, live web_search/web_research/start_char tests (65k-char page chunked), battery 12/12 sweep, fast-launch 465-478ms, pushed to GitHub 6808680",
+    "MISSION PERFECTED & COMPLETE"
+  ]
+}
