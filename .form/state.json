@@ -52,6 +52,11 @@
       "state": "PASSED",
       "checkpoint": "see contracts-v3.md",
       "summary": "perfection round: ProgressEngine (scroll-stable <=5s), auto best-model + /update, lossless JSONL archive + memory_search, 26 commands, structural compliance (T1-T3), 3x 12/12 sweeps (S1/S2/S3), LIVE all-PASS, fast launch 117-128ms x10, scout triage applied/rejected with data"
+    },
+    "V3-NEVER-STUCK": {
+      "state": "PASSED",
+      "checkpoint": "live-session feedback round",
+      "summary": "paste-flood editor fix (1 clean line), /api/ps cold-start honesty, stall watchdog (45s kill+retry, 240s cold patience, zero-kill proven), keep_alive 24h"
     }
   },
   "history": [
@@ -72,6 +77,7 @@
     "MISSION PERFECTED & COMPLETE",
     "UX HARDENING round (user live-session demands): scroll-force fixed (rich Live removed - content-driven output, silence beats 5s/15s terminal, 3s piped logs); msvcrt Up/Down history across ALL sessions + full slash battery (/help /new /sessions /history /stats /research /compact /model /tools /save /reset /cwd /exit); auto context compaction via real prompt_eval_count + atomic boundaries = unlimited sessions; ULTIMATEAI_HW ground truth injected (never misreport VRAM); never-argue + beautiful-answer contract; parallel scout findings applied (keep_alive 1h, thinking round-trip, gemma4/qwen3.6 catalog, recount rule); M03 checker + concurrency incident resolved; certification 12/12 (M01-M04,M05,M06,M08-M12 sweep + M07,M11 clean reruns); fast launch 449-509ms; pushed 72cf939 -> github 2d3d143, outer repo main -> 72cf939",
     "MISSION PERFECTED & COMPLETE",
-    "PERFECTION ROUND 2026-10-12: D1-D12 all PASS (contracts-v3.md). S1 12/12 (1 scripted retry), S2 12/12 clean, S3 12/12 clean; T-A 3.01s / T-B 2.51s / T-C viewport frozen 30s+23ticks / T-D upgrade chain / T-E token-after-7-compactions / T-F 33/33 / T1-T3 compliance / LIVE deliverables all verified (quotes re-fetched live). Fast launch 10/10 117-128ms. Structural fixes: dual-ollama incident, ASCII ps1, RUN_ID pid, hermetic ULTIMATEAI_HOME, TEE, write_file append, compaction keeps ORIGINAL mission, strict checklist gate, bare-JSON rejection, paste-safe editor, deferral age-valve + 2-streak + stop-stash. Known limitation documented: rare single-line conhost snap at tool boundaries under stress."
+    "PERFECTION ROUND 2026-10-12: D1-D12 all PASS (contracts-v3.md). S1 12/12 (1 scripted retry), S2 12/12 clean, S3 12/12 clean; T-A 3.01s / T-B 2.51s / T-C viewport frozen 30s+23ticks / T-D upgrade chain / T-E token-after-7-compactions / T-F 33/33 / T1-T3 compliance / LIVE deliverables all verified (quotes re-fetched live). Fast launch 10/10 117-128ms. Structural fixes: dual-ollama incident, ASCII ps1, RUN_ID pid, hermetic ULTIMATEAI_HOME, TEE, write_file append, compaction keeps ORIGINAL mission, strict checklist gate, bare-JSON rejection, paste-safe editor, deferral age-valve + 2-streak + stop-stash. Known limitation documented: rare single-line conhost snap at tool boundaries under stress.",
+    "NEVER-STUCK round (user live session 11:05): paste echoed 33 stacked wrapped copies -> wrap-safe throttled editor (T-G: 275-char paste = 1 line, PASS); silent cold load -> honest /api/ps notes + stream watchdog (T-I dead server: 11 kills, beats <=3.03s, clean exit; T-H/M03 cold: 12 notes, 0 kills, verified, gap 3.01s); keep_alive 24h everywhere; config stream_stall_s. Pushed."
   ]
 }
