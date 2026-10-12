@@ -1,117 +1,101 @@
 {
-  "mission_id": "form-20261011-2155",
-  "objective": "Harden Ultimate-AI per user's live-session demands: stop scroll force-down, parallel online scout, never-argue persistence, beautiful answers, infinite session memory (auto-compaction), Up/Down history across all sessions, full slash-command battery, ground-truth hardware injection - without breaking anything currently working.",
+  "mission_id": "form-20261012-1240",
+  "objective": "Ultimate-AI clarity+unlimited-memory round: enforce memory_search evidence after compaction, anti-hallucination answers, max-context probe, full re-certification",
+  "contracts": ".form/contracts/contracts-v4.md",
   "tasks": [
     {
-      "task_id": "S-000",
-      "title": "parallel online scout (no overlap)",
+      "task_id": "C-401",
+      "title": "MEM structural: evidence gate + compaction rules",
       "target_files": [
-        "(reports only)"
+        "ultimate-llm/harness/harness.py",
+        "ultimate-llm/missions/compliance/MEM.txt"
       ],
       "dependencies": [],
-      "interface_spec": "background web-research worker; delivers findings list; main session applies useful items",
+      "interface_spec": "contracts-v4 C1,C2,C3,C6",
       "acceptance_tests": [
-        "findings report present"
+        ".venv/Scripts/python.exe harness/harness.py --self-test",
+        "MEM checker PASS x3"
       ],
       "priority": 1
     },
     {
-      "task_id": "T-201",
-      "title": "scroll-friendly output + heartbeat rebalance",
+      "task_id": "C-402",
+      "title": "Anti-hallucination + qa_live driver",
       "target_files": [
-        "ultimate-llm/harness/harness.py"
+        "ultimate-llm/harness/harness.py",
+        "ultimate-llm/tools/qa_live.py"
       ],
-      "dependencies": [],
-      "interface_spec": "no output during silent thinking in terminals (scroll stays put); content streams as it arrives; silence beats 10s terminal / 3s piped; fix 'writeing' typo",
+      "dependencies": [
+        "C-401"
+      ],
+      "interface_spec": "contracts-v4 C4,C5,C7",
       "acceptance_tests": [
-        "py_compile",
-        "--self-test"
+        "self-test",
+        "qa_live PASS"
       ],
       "priority": 2
     },
     {
-      "task_id": "T-202",
-      "title": "Up/Down history across all sessions + slash-command battery",
+      "task_id": "C-403",
+      "title": "Context probe 64k vs 32k",
       "target_files": [
-        "ultimate-llm/harness/harness.py"
+        "ultimate-llm/tools/ctx_probe.py"
       ],
       "dependencies": [],
-      "interface_spec": "msvcrt line editor: Up/Down cycles ~/.ultimate-ai/history.log (all sessions, newest first); commands: /help /new /sessions [n] /history /model /tools /save /reset|/clear /compact /stats /research /cwd /exit|/quit",
+      "interface_spec": "contracts-v4 C8",
       "acceptance_tests": [
-        "py_compile",
-        "--self-test",
-        "unit test editor + history"
+        "probe log + decision recorded"
+      ],
+      "priority": 2
+    },
+    {
+      "task_id": "C-404",
+      "title": "Re-certification suite",
+      "target_files": [],
+      "dependencies": [
+        "C-401",
+        "C-402"
+      ],
+      "interface_spec": "contracts-v4 C9 + battery 12/12",
+      "acceptance_tests": [
+        "MEM x3",
+        "T1-T3",
+        "battery 12/12",
+        "fast launch x3 <1000ms"
       ],
       "priority": 3
     },
     {
-      "task_id": "T-203",
-      "title": "infinite session memory (auto-compaction)",
+      "task_id": "C-405",
+      "title": "Ship + final clear answer",
       "target_files": [
-        "ultimate-llm/harness/harness.py"
+        "ultimate-llm/docs/",
+        "ultimate-llm/README.md"
       ],
-      "dependencies": [],
-      "interface_spec": "token estimate; when history > ~22k tokens, summarize old turns via one model call, keep recent window + rolling summary in system prompt; persisted per session",
+      "dependencies": [
+        "C-404"
+      ],
+      "interface_spec": "push outer+subtree, ls-remote verify",
       "acceptance_tests": [
-        "py_compile",
-        "--self-test",
-        "compaction unit test"
+        "git ls-remote == split sha"
       ],
       "priority": 4
     },
     {
-      "task_id": "T-204",
-      "title": "ground-truth hardware + never-argue/beautiful-answer prompts",
-      "target_files": [
-        "ultimate-llm/harness/harness.py",
-        "ultimate-llm/Start-UltimateAI.ps1"
-      ],
-      "dependencies": [],
-      "interface_spec": "bootstrap state stores hw summary; master passes ULTIMATEAI_HW env; system prompt asserts ground truth (never misreport VRAM); never-argue + beautiful-structured-answer rules",
-      "acceptance_tests": [
-        "parse-check ps1",
-        "py_compile",
-        "fast launch ok"
-      ],
-      "priority": 5
-    },
-    {
-      "task_id": "T-205",
-      "title": "certification: sweep 12/12 + launch timing + scout findings applied + GitHub push",
-      "target_files": [
-        "(all)"
-      ],
-      "dependencies": [
-        "T-201",
-        "T-202",
-        "T-203",
-        "T-204"
-      ],
-      "interface_spec": "full battery sweep 12/12; fast launch <1s; scout findings reviewed and useful items applied; push ultimate-llm + outer repo",
-      "acceptance_tests": [
-        "verify.py ALL = 12/12",
-        "3x fast launch <1000ms",
-        "git push success"
-      ],
-      "priority": 6
-    },
-    {
-      "task_id": "V3-000",
-      "title": "2026-10-12 perfection round (D1-D12)",
+      "task_id": "C-406",
+      "title": "Resource yield sentinel (NVML) + /yield + priority",
       "target_files": [
         "ultimate-llm/harness/harness.py",
         "ultimate-llm/Start-UltimateAI.ps1",
-        "ultimate-llm/lib/discover-model.ps1",
-        "ultimate-llm/tools/",
-        "ultimate-llm/missions/"
+        "ultimate-llm/lib/ensure-prereqs.ps1",
+        "ultimate-llm/tools/yield_proof.py"
       ],
       "dependencies": [],
-      "interface_spec": "see .form/contracts/contracts-v3.md",
+      "interface_spec": "contracts-v4 C1-C8 + yield sentinel (NVML 3s poll, keep_alive 0 unload, rewarm, partial-residency guard, BelowNormal)",
       "acceptance_tests": [
-        "S1/S2/S3 12/12",
-        "T-A..T-F",
-        "T1-T3+MEM+LIVE",
-        "fast launch x10 <1000ms"
+        "self-test block 28",
+        "tools/yield_proof.py PASS",
+        "T-Y4 priority BelowNormal"
       ],
       "priority": 1
     }

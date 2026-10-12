@@ -1,62 +1,38 @@
 {
-  "mission_id": "form-20261011-1834",
-  "updated_at": "2026-10-11T19:40:00+03:00",
-  "mode": "OFF-PEAK",
+  "mission_id": "form-20261012-1240",
+  "updated_at": "2026-10-12T21:05:00+03:00",
+  "mode": "PEAK",
   "tasks": {
-    "T-101": {
-      "state": "PASSED",
-      "attempts": 0,
-      "checkpoint": "314c0ce"
-    },
-    "T-102": {
-      "state": "PASSED",
-      "attempts": 0,
-      "checkpoint": "314c0ce"
-    },
-    "T-103": {
-      "state": "PASSED",
-      "attempts": 7,
-      "checkpoint": "313c8a4"
-    },
-    "T-104": {
+    "C-401": {
       "state": "PASSED",
       "attempts": 2,
-      "checkpoint": "f6b48c4"
+      "checkpoint": null
     },
-    "T-105": {
+    "C-402": {
       "state": "PASSED",
-      "attempts": 1,
-      "checkpoint": "397136f"
+      "attempts": 0,
+      "checkpoint": null
     },
-    "T-106": {
+    "C-403": {
       "state": "PASSED",
-      "attempts": 1,
-      "checkpoint": "github: 5b3566f (export main)"
+      "attempts": 0,
+      "checkpoint": null,
+      "verdict": "KEEP 32768"
     },
-    "F-101..F-105": {
+    "C-404": {
       "state": "PASSED",
-      "attempts": 5,
-      "checkpoint": "dbd6443 + github 8e919ff"
+      "attempts": 0,
+      "checkpoint": null
     },
-    "W-1": {
+    "C-405": {
       "state": "PASSED",
-      "attempts": 1,
-      "checkpoint": "2585019 + github 6808680"
+      "attempts": 0,
+      "checkpoint": null
     },
-    "T-201..T-205": {
+    "C-406": {
       "state": "PASSED",
-      "attempts": 3,
-      "checkpoint": "72cf939 + github 2d3d143"
-    },
-    "V3-20261012": {
-      "state": "PASSED",
-      "checkpoint": "see contracts-v3.md",
-      "summary": "perfection round: ProgressEngine (scroll-stable <=5s), auto best-model + /update, lossless JSONL archive + memory_search, 26 commands, structural compliance (T1-T3), 3x 12/12 sweeps (S1/S2/S3), LIVE all-PASS, fast launch 117-128ms x10, scout triage applied/rejected with data"
-    },
-    "V3-NEVER-STUCK": {
-      "state": "PASSED",
-      "checkpoint": "live-session feedback round",
-      "summary": "paste-flood editor fix (1 clean line), /api/ps cold-start honesty, stall watchdog (45s kill+retry, 240s cold patience, zero-kill proven), keep_alive 24h"
+      "attempts": 6,
+      "checkpoint": null
     }
   },
   "history": [
@@ -78,6 +54,10 @@
     "UX HARDENING round (user live-session demands): scroll-force fixed (rich Live removed - content-driven output, silence beats 5s/15s terminal, 3s piped logs); msvcrt Up/Down history across ALL sessions + full slash battery (/help /new /sessions /history /stats /research /compact /model /tools /save /reset /cwd /exit); auto context compaction via real prompt_eval_count + atomic boundaries = unlimited sessions; ULTIMATEAI_HW ground truth injected (never misreport VRAM); never-argue + beautiful-answer contract; parallel scout findings applied (keep_alive 1h, thinking round-trip, gemma4/qwen3.6 catalog, recount rule); M03 checker + concurrency incident resolved; certification 12/12 (M01-M04,M05,M06,M08-M12 sweep + M07,M11 clean reruns); fast launch 449-509ms; pushed 72cf939 -> github 2d3d143, outer repo main -> 72cf939",
     "MISSION PERFECTED & COMPLETE",
     "PERFECTION ROUND 2026-10-12: D1-D12 all PASS (contracts-v3.md). S1 12/12 (1 scripted retry), S2 12/12 clean, S3 12/12 clean; T-A 3.01s / T-B 2.51s / T-C viewport frozen 30s+23ticks / T-D upgrade chain / T-E token-after-7-compactions / T-F 33/33 / T1-T3 compliance / LIVE deliverables all verified (quotes re-fetched live). Fast launch 10/10 117-128ms. Structural fixes: dual-ollama incident, ASCII ps1, RUN_ID pid, hermetic ULTIMATEAI_HOME, TEE, write_file append, compaction keeps ORIGINAL mission, strict checklist gate, bare-JSON rejection, paste-safe editor, deferral age-valve + 2-streak + stop-stash. Known limitation documented: rare single-line conhost snap at tool boundaries under stress.",
-    "NEVER-STUCK round (user live session 11:05): paste echoed 33 stacked wrapped copies -> wrap-safe throttled editor (T-G: 275-char paste = 1 line, PASS); silent cold load -> honest /api/ps notes + stream watchdog (T-I dead server: 11 kills, beats <=3.03s, clean exit; T-H/M03 cold: 12 notes, 0 kills, verified, gap 3.01s); keep_alive 24h everywhere; config stream_stall_s. Pushed."
+    "NEVER-STUCK round (user live session 11:05): paste echoed 33 stacked wrapped copies -> wrap-safe throttled editor (T-G: 275-char paste = 1 line, PASS); silent cold load -> honest /api/ps notes + stream watchdog (T-I dead server: 11 kills, beats <=3.03s, clean exit; T-H/M03 cold: 12 notes, 0 kills, verified, gap 3.01s); keep_alive 24h everywhere; config stream_stall_s. Pushed.",
+    "ROUND form-20261012-1240 start: user live session showed hallucinated harness answers + MEM regression (memory_search skipped after compaction; codeword.txt inexact at 01:56 run) + threshold-8000 collapse (01:41). Up/Ctrl+C transcript artifact ruled out as bug.",
+    "YIELD round progress: sentinel built on NVML (dxgi COM E_NOINTERFACE, D3DKMT C0000008, PDH wildcard C0000BBB all dead ends on this stack); T-Y2 PASS all 9 checks (stability/deterministic unload/mid-yield answer 34 ticks maxgap 2.53s/rewarm/off-quiet/exit0) + 2 ORGANIC yield-rewarm cycles under real desktop pressure 2.2-2.8GB; T-Y4 BelowNormal; interactive task_done fast-accept + no-task_done nudge skip for clean Q&A (was doubling every answer); MEM root causes fixed (tool-evidence gate forces memory_search after compaction - proven PASS; no-compaction-at-350-words fixed via 500-word parts; storm guard); ctx 65536 REJECTED with crash data, KEEP 32768. In flight: MEM x3 rerun (detached), then QA-LIVE, T1-T3, paste, battery Y1.",
+    "C-406 yield sentinel SHIPPED-pending-battery: T-Y2 PASS 9/9 (stability, deterministic unload, mid-yield answer 34 ticks 2.53s max gap, rewarm, off-quiet, exit0) + T-Y4 BelowNormal + 2 organic cycles; MEM cert first-compaction fix; MEM 3/3 PASS earlier sequence invalidated by gate semantics, rerun in flight by pipeline worker.",
+    "YIELD+CLARITY round COMPLETE: T-Y2 9/9 (NVML sentinel; unload/rewarm/mid-yield answer), T-Y4 BelowNormal, QA-LIVE PASS (5 web calls, all URLs grounded, cadence 2.51s), MEM 3/3 PASS, T1/T2/T3 PASS, paste PASS x2, battery Y2 12/12 CLEAN SWEEP (M04 hardened text), M09 post-edit sanity PASS, launch 247-355ms. Review-driven fixes: P1 evidence-gate absolute-seq (trim-proof), sentinel notice queue + TOCTOU + audit-fail trace, /yield off-on stranded-model fixes, ollama_llama_server priority, answer URL integrity lint (interactive), linear tag-strip regex (273s GIL-starvation hole closed - ticks now flow through web_research). Context verdict: 65536 REJECTED (60k runner crash), KEEP 32768, q8_0 documented opt-in."
   ]
 }
